@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="author" content="mofu-mofu cat cafe">
+	<meta name="keywords" content="猫,カフェ,cafe">
+	<meta name="description" content="mofu-mofu cat cafeのお問い合わせフォームページです">
+	<title>お問い合わせフォーム&nbsp;mofu-mofu cat cafe</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&family=Farsan&family=Kaisei+Decol&family=Kiwi+Maru&family=Kosugi+Maru&family=Noto+Serif+JP&family=Shippori+Mincho&family=Yomogi&family=Yusei+Magic&display=swap" rel="stylesheet">
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/slideshow.js"></script>
+	<script src="js/smoothscroll.js"></script>
+</head>
+
+<body id="contact">
+
+<header>
+<p id="pagetop"></p>
+
+<div id="header">
+	<h1 class="fadeIn"><a href="index.html">メインロゴ</a></h1>
+	<nav><ul>
+		<li class="gnav1"><a href="cast.html">CAST</a></li>
+		<li class="gnav2"><a href="foodmenu.html">FOODMENU</a></li>
+		<li class="gnav3"><a href="system.html">SYSTEM</a></li>
+		<li class="gnav4"><a href="shop.html">SHOP</a></li>
+		<li class="gnav5"><a href="contact.html">CONTACT</a></li>
+	</ul></nav>
+</div>
+
+<h2 id="slideshow">
+<img src="image/contact_image1.png" width="1280" height="600" alt="お問い合わせフォームイメージ1枚目" class="active">
+<img src="image/contact_image2.png" width="1280" height="600" alt="お問い合わせフォームイメージ2枚目">
+</h2>
+</header>
+
+<article>
+<h1 id="title">お問い合わせフォーム</h1>
+
+<form action="mailto:xxxx@xxxx.co.jp" method="post" enctype="text/plain">
+<div id="form">
+
+<div class="wrap">
+<label>お名前&nbsp;<span class="red">(必須)</span></label>
+<p><input type="text" class="input1" name="name" placeholder="全角で入力してください" required></p>
+</div>
+
+<div class="wrap">
+<label>メールアドレス&nbsp;<span class="red">(必須)</span></label>
+<p><input type="email" class="input1" name="email" placeholder="半角で入力してください" required></p>
+</div>
+
+<div class="wrap">
+<label>分類</label>
+<p><select class="input1" name="kind">
+	<option value="" hidden>以下から選択してください</option>
+	<option value="osaka">在籍する猫について</option>
+	<option value="kyoto">フードメニューについて</option>
+	<option value="shiga">ご予約について</option>
+	<option value="hyogo">その他</option>
+</select></p>
+</div>
+
+<div class="wrap">
+<label class="large1">お問い合わせ内容&nbsp;<span class="red">(必須)</span></label>
+<p class="large2"><textarea class="input2" name="comment" required></textarea></p>
+</div>
+
+</div><!-- id=formの終了 */ -->
+
+<div id="btgroup">
+<input type="reset" class="button" value="入力内容を削除">
+<input type="submit" class="button" value="送信">
+</div>
+</form>
+
+<p id="topbutton"><a href="#pagetop">page<br>top</a></p>
+</article>
+
+<footer>
+<div>
+	<nav><ul>
+		<li><a href="cast.html">CAST</a></li>
+		<li><a href="foodmenu.html">FOODMENU</a></li>
+		<li><a href="system.html">SYSTEM</a></li>
+		<li><a href="shop.html">SHOP</a></li>
+		<li><a href="contact.html">CONTACT</a></li>
+	</ul></nav>
+	<h1 class="fadeIn"><a href="index.html">サブロゴ</a></h1>
+	<p id="tel">tel&nbsp;:&nbsp;0797-38-0090</p>
+</div>
+
+<p id="copyright">Copyright&nbsp;©&nbsp;2023&nbsp;mofu-mofu&nbsp;cat&nbsp;café&nbsp;All&nbsp;Rights&nbsp;Reserved.</p>
+</footer>
+
+</body>
+</html>

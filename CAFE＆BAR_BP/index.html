@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>CAFEBAR_BP_Top</title>
+    <meta name="author" content="CAFEBAR_BP">
+    <meta name="keywords" content="Bar,芦屋,BP">
+    <meta name="description" content="cafeの様に寛げる芦屋のバーです。ぜひ一度足を伸ばしてみてください。">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!--script src-->
+    <script src="js/jquery-3.6.0.min.js">
+    </script>
+    <script src="js/smoothscroll.js">
+    </script>
+    <script src="js/jquery.bgswitcher.js">
+    </script>
+    <script src="js/bgslideshow.js">
+    </script>
+    
+
+     <!-- google_font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
+        
+</head>
+    <body id="pagetop">
+        <div id="slideshow">
+            <img src="image/bgi/Top_bg.jpg" class="active">
+            <img src="image/bgi/Top_slaid2.jpg">
+            <img src="image/bgi/Top_slaid.jpg">
+          </div>
+        <div class="Tbox">
+
+            <div class="wrap">
+                <div class="mainbox">
+                    <!-- <article>
+                     </article> -->
+                </div> 
+                <div class="sidebox">
+                     <aside><a href="index.html">
+                         <img src="image/bgi/CAFEBARBP_252px.png" alt="CAFE&BAR_BPロゴ"></a>
+                         <nav class="linkbar">
+                             <ul>
+                                 <li> <a href="#pagetop">Top</a></li>
+                                 <li><a href="menu.html">Menu</a></li>
+                                 <li><a href="access.html">Access</a></li>
+                                 <li><a href="form.html">Form</a></li>
+                            </ul>
+                         </nav>
+                     </aside>
+                 </div>
+            </div>
+    
+            <footer>
+                 <div class="flogo">
+                    <a href="#pagetop">
+                        <img src="image/bgi/CAFEBARBP_60px.png">
+                    </a>
+                 </div>
+                 <p><small>TEL:000-000-000&nbsp;&nbsp;</small></p> 
+                 <p><small>Copyright&nbsp;&copy;&nbsp;2023CAFE&BAR_BP. All Rights Reserved.</small></p>
+            </footer>
+        </div>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            let images = document.querySelectorAll("#slideshow img");
+            let index = 0;
+            let interval = 3000; // 3 seconds
+            
+            function changeImage() {
+              images[index].classList.remove("active");
+              index = (index + 1) % images.length;
+              images[index].classList.add("active");
+            }
+            
+            setInterval(changeImage, interval);
+        </script>
+            
+       
+    </body>
+</html>

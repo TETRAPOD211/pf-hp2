@@ -1,0 +1,1047 @@
+@charset "utf-8";
+
+/* CSSリセット */
+h1,h2,h3,em,strong,th,address,dfn{
+	font-style: normal;
+	font-weight: normal;
+	font-size: 100%;
+}
+body,h1,h2,h3,p,ul,ol,li,tr,th,td,dl,dt,dd,figure{
+	margin: 0;
+	padding: 0;
+}
+ul,ol{
+	list-style-type: none;
+}
+
+/* 全ページ共通 */
+body{
+	font-family: "Kosugi Maru",sans-serif;
+	color: #222;
+	font-size: 20px;
+	line-height: 25px;
+}
+
+.fadeIn a:hover{
+	animation-name: fadeInAnime;
+	animation-duration: 1.5s;
+}
+@keyframes fadeInAnime{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+
+.shine{
+	position: relative;
+	overflow: hidden;
+}
+.shine:hover::before{
+	animation: shineAnime 3s infinite;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -160%;
+	width: 140%;
+	height: 100%;
+	background-color: #fff;
+	transform: skewX(-45deg);
+	opacity: 0.5;
+}
+@keyframes shineAnime{
+	100%{left: 125%;}
+}
+
+	/* ヘッダー */
+#header{
+	width: 100%;
+	height: 100px;
+	background-image: url(image/header_bgimage.png);
+	position: fixed;
+	z-index: 4;
+	display: flex;
+	justify-content: space-between;
+}
+header h1 a{
+	display: block;
+	width: 500px;
+	height: 65px;
+	background-image: url(image/logo_main.png);
+	background-repeat: no-repeat;
+	margin-left: 25px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+	font-size: 0;
+}
+header ul{
+	display: flex;
+	padding-top: 50px;
+}
+header ul a{
+	display: block;
+	height: 45px;
+	font-size: 0;
+}
+header ul a:link{
+	background-repeat: no-repeat;
+	background-position: center;
+}
+header ul .gnav1 a:link{
+	background-image: url(image/cast_link.png);
+}
+	#cast ul .gnav1 a:link{
+		background-image: url(image/cast_over.png);
+	}
+header ul .gnav2 a:link{
+	background-image: url(image/foodmenu_link.png);
+}
+	#foodmenu ul .gnav2 a:link{
+		background-image: url(image/foodmenu_over.png);
+	}
+header ul .gnav3 a:link{
+	background-image: url(image/system_link.png);
+}
+	#system ul .gnav3 a:link{
+		background-image: url(image/system_over.png);
+	}
+header ul .gnav4 a:link{
+	background-image: url(image/shop_link.png);
+}
+	#shop ul .gnav4 a:link{
+		background-image: url(image/shop_over.png);
+	}
+header ul .gnav5 a:link{
+	background-image: url(image/contact_link.png);
+}
+	#contact ul .gnav5 a:link{
+		background-image: url(image/contact_over.png);
+	}
+header ul a:hover{
+	background-repeat: no-repeat;
+	background-position: center;
+	transition-duration: 1s;
+}
+header ul .gnav1 a:hover{
+	background-image: url(image/cast_over.png);
+}
+header ul .gnav2 a:hover{
+	background-image: url(image/foodmenu_over.png);
+}
+header ul .gnav3 a:hover{
+	background-image: url(image/system_over.png);
+}
+header ul .gnav4 a:hover{
+	background-image: url(image/shop_over.png);
+}
+header ul .gnav5 a:hover{
+	background-image: url(image/contact_over.png);
+}
+header ul .gnav1{width: 95px;}
+header ul .gnav2{width: 160px;}
+header ul .gnav3{width: 121px;}
+header ul .gnav4{width: 99px;}
+header ul .gnav5{width: 139px;}
+
+#slideshow{
+	position: relative; /* 画像の位置を基準にする */
+	margin: 0 auto;
+	top:100px;
+	left: 0;
+	width: 1280px; /* boxサイズのwとhを画像と同じサイズに設定*/
+	height: 600px;
+}
+	#index #slideshow{height: 790px;}
+
+#slideshow img{
+	display: block;
+	position: absolute;/* 親要素のボックスの位置と左上にぴったり合わせる*/
+	z-index: 0; /* 順番じゃない画像は一番下*/
+	opacity: 0.0; /* 順番じゃない画像は透明にする（JavaScriptで徐々に透明度を下げて表示させる）*/
+}
+#slideshow img.active{ /*最初に表示される画像*/
+	z-index: 2; /* 画像を一番手前に設定*/
+	opacity: 1.0; /* 完全に不透明で表示*/
+}
+#slideshow img.last-active{
+	z-index: 1;
+}
+
+	/* メインコンテンツ */
+article{
+	width: 1080px;
+	margin: 0 auto;
+	padding-top: 100px;
+}
+#title{
+	height: 80px;
+	background-repeat: no-repeat;
+	margin: 20px auto 30px;
+	font-size: 0;
+}
+	#cast #title{
+		background-image: url(image/cast_title.png);
+		width: 406px;
+	}
+	#foodmenu #title{
+		background-image: url(image/foodmenu_title.png);
+		width: 531px;
+	}
+	#system #title{
+		background-image: url(image/system_title.png);
+		width: 367px;
+	}
+	#shop #title{
+		background-image: url(image/shop_title.png);
+		width: 210px;
+	}
+	#contact #title{
+		background-image: url(image/contact_title.png);
+		width: 451px;
+	}
+#topbutton{
+	position: fixed;
+	z-index: 3;
+	bottom: 120px;
+	right: 20px;
+}
+#topbutton a{
+	display: table-cell;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	background-color: #FFD18B;
+	color: #B72C00;
+	font-size: 20px;
+	font-family: "Shippori Mincho";
+	font-weight: bold;
+}
+
+	/* フッター */
+footer{
+	width: 100%;
+	height: 100px;
+	color: #fff;
+	background-color: #9A4515;
+	overflow: hidden;
+}
+footer div{
+	display: flex;
+	justify-content: space-between;
+}
+footer ul{
+	display: flex;
+	padding:30px 20px 10px;
+}
+footer ul a{
+	display: block;
+	height: 30px;
+	padding: 0 10px;
+	color: #fff;
+	font-size: 25px;
+	font-family: "Farsan";
+}
+footer ul a:link{
+	text-decoration: none;
+}
+footer ul a:hover{
+	color: #99d7d8;
+}
+footer h1 a{
+	display: block;
+	width: 400px;
+	height: 35px;
+	background-image: url(image/logo_sub.png);
+	background-repeat: no-repeat;
+	margin-top: 20px;
+	font-size: 0;
+}
+footer #tel{
+	width: 200px;
+	height: 30px;
+	background-image: url(image/tel.png);
+	background-repeat: no-repeat;
+	margin:25px 20px 10px;
+	font-size: 0;
+}
+footer #copyright{
+	float: right;
+	padding-right: 20px;
+	font-family: "Encode Sans Expanded";
+	font-size: 18px;
+}
+
+/* トップページ専用 */
+#index #concept{
+	text-align: center;
+	font-family: "Noto Serif JP";
+	font-size: 30px;
+	line-height: 45px;
+	margin: 50px 0;
+}
+#index table{
+	margin-bottom: 30px;
+}
+#index table caption{
+	text-align: left;
+	font-family: "Shippori Mincho";
+	font-size: 130%;
+	font-weight: bold;
+	padding: 15px 0;
+}
+#index th,td{
+	border: #fff solid 3px ;
+}
+#index table th{
+	text-align: right;
+	color: #fff;
+	padding: 5px 10px;
+	margin: 1em;
+	border-radius: 10px;
+	background-color: #bbb;
+}
+#index table td{
+	padding: 0 15px;
+}
+
+/* 猫スタッフの紹介ページ専用 */
+#cast table{
+	width: 1080px;
+	border-top: 1px dashed #333;
+	border-bottom: 1px dashed #333;
+	margin: 0 auto 40px;
+}
+#cast table a{
+	display: block;
+	width: 153px;
+	padding: 10px;
+	color: #333;
+	font-size: 24px;
+	font-family: "Yusei Magic";
+	text-align: center;
+}
+#cast table a:link{
+	text-decoration: none;
+}
+#cast table a:hover{
+	border-radius: 60%;
+	background-color: #e6dddd;
+	transition-duration: 1.5s;
+}
+#cast .grid{
+	display: grid;
+	grid-template: 100px 150px / 300px auto;
+	margin-bottom: 40px;
+}
+#cast .gridimage{
+	grid-row: 1 / 3;
+	grid-column: 1 / 2;
+}
+#cast .gridname{
+	grid-row: 1 / 2;
+	grid-column: 2 / 3;
+	font-family: "Yusei Magic";
+	font-size: 40px;
+	padding: 30px 0;
+}
+#cast .griddetail{
+	grid-row: 2 / 3;
+	grid-column: 2 / 3;
+	font-family: "Kaisei Decol";
+	font-size: 26px;
+	line-height: 35px;
+	padding: 10px 0;
+}
+#cast .mouseover:hover .popup{
+	display: block;
+}
+#cast .popup{
+	display: none;
+	position: relative;
+	top: -300px;
+}
+
+/* フードメニューページ専用 */
+#foodmenu table{
+	width: 1080px;
+	border-top: 1px dashed #333;
+	border-bottom: 1px dashed #333;
+	margin: 0 auto 40px;
+}
+#foodmenu table a{
+	display: block;
+	width: 513px;
+	padding: 10px;
+	color: #333;
+	font-size: 26px;
+	font-family: "Yusei Magic";
+	text-align: center;
+}
+#foodmenu table a:link{
+	text-decoration: none;
+}
+#foodmenu table a:hover{
+	border-radius: 60%;
+	background: radial-gradient(120px 30px,#aaa,#fff);
+	transition-duration: 3s;
+}
+#foodmenu article h2{
+	max-width: 1080px;
+	background: linear-gradient(to right,#FF5D29,#fff);
+	margin-bottom: 30px;
+	padding: 10px 30px;
+	color: #fff;
+	font-size: 30px;
+	font-family: "Yusei Magic";
+}
+#foodmenu .grid{
+	display: grid;
+	grid-template: 100px 150px / 300px auto 180px;
+	margin-bottom: 40px;
+}
+#foodmenu .gridimage{
+	grid-row: 1 / 3;
+	grid-column: 1 / 2;
+}
+#foodmenu .gridname{
+	grid-row: 1 / 2;
+	grid-column: 2 / 3;
+	font-family: "Yusei Magic";
+	font-size: 40px;
+	padding: 30px 0;
+}
+#foodmenu .gridprice{
+	grid-row: 1 / 2;
+	grid-column: 3 / 4;
+	font-family: "Yusei Magic";
+	font-size: 40px;
+	padding: 30px 0;
+	text-align: right;
+}
+#foodmenu .griddetail{
+	grid-row: 2 / 3;
+	grid-column: 2 / 4;
+	font-family: "Kaisei Decol";
+	font-size: 26px;
+	line-height: 35px;
+	padding: 10px 0;
+}
+
+/* 利用ルール・料金ページ専用 */
+#system article h2{
+	font-size: 30px;
+	font-family: "Noto Serif JP";
+	text-align: center;
+	margin-bottom: 30px;
+}
+#system article h3{
+	display: block;
+	width: 960px;
+	font-size: 22px;
+	line-height: 35px;
+	margin: 0 auto 70px;
+}
+#system table{
+	margin: 0 auto 50px;
+	border: 1px solid #333;
+	border-collapse: collapse;
+}
+#system table td{
+	width: 400px;
+	font-size: 22px;
+	font-family: "Kaisei Decol";
+	line-height: 40px;
+	text-align: center;
+	border: 1px solid #333;
+}
+
+/* 店舗案内ページ専用 */
+#shop article{
+	overflow: hidden;
+}
+#shop #map{
+	float: left;
+	margin-bottom: 75px;
+}
+#shop #map p{
+	display: block;
+	width: 460px;
+	font-size: 20px;
+	font-family: "Kiwi Maru";
+	margin: 10px;
+}
+#shop #info{
+	float: right;
+	display: block;
+	width: 540px;
+	padding-left: 60px;
+	font-family: "Kiwi Maru";
+}
+#shop .index{
+	font-size: 26px;
+	line-height: 50px;
+}
+#shop .content{
+	font-size: 20px;
+	line-height: 35px;
+	padding-left: 40px;
+	padding-bottom: 40px;
+}
+
+/* お問い合わせフォーム専用 */
+#contact form #form{
+	width: 980px;
+	margin: 0 auto;
+	border-top: solid 3px #FFA877;
+	border-bottom: solid 4px #FFA877;
+}
+#contact form .wrap{
+	display: flex;
+}
+#contact form .wrap label{
+	width: 350px;
+	height: 75px;
+	padding-top: 45px;
+	background-color: #FFF0F0;
+	text-align: center;
+	font-size: 24px;
+	font-family: "Yomogi";
+	border-top: 1px #FFA877 solid	
+}
+#contact form .wrap label span{
+	font-size: 20px;
+	color: #f00;
+}
+#contact form .wrap p{
+	width: 550px;
+	height: 80px;
+	padding: 40px 40px 0;
+	border-top: 1px #FFA877 solid	
+}
+#contact form .input1{
+	width: 400px;
+	height: 40px;
+	font-size: 20px;
+	color: #222;
+}
+#contact form .wrap .large1{
+	padding-top: 120px;
+	height: 170px;
+}
+#contact form .wrap .large2{
+	height: 250px;
+}
+#contact form .input2{
+	width: 550px;
+	height: 200px;
+	font-size: 20px;
+	color: #222;
+}
+#contact form #btgroup{
+	display: flex;
+}
+#contact form .button{
+	display: block;
+	width: 250px;
+	height: 60px;
+	border-radius: 20px;
+	margin: 50px auto;
+	border: none;
+	background-color: #ebcfab;
+	color: #555;
+	font-size: 22px;
+	font-family: "Kosugi Maru";
+}
+#contact form .button:hover{
+	background-color: #f1dbbf;
+	color: #aaa;
+	cursor: pointer;
+}
+
+
+
+/* ◆◆◆◆◆ レスポンシブ設定 ◆◆◆◆◆ */
+/* ◎◎◎ 1304px以下の場合 ◎◎◎ */
+@media screen and (max-width: 1304px){
+	/* body{background-color:#def7a4;} */
+
+	/* ヘッダー */
+	#slideshow{
+		width: 100%;
+		height: auto;
+		padding-bottom: 48%;
+	}
+		#index #slideshow{
+			height: auto;
+			padding-bottom: 65%;
+		}
+	#slideshow img{
+		width: 100%;
+		height: auto;
+	}
+
+	/* メインコンテンツ */
+	article{
+		width: 90%;
+		font-size: 80%;
+	}
+	#title{
+		height: 60px;
+		margin: 10px auto 15px;
+		background-size: contain;
+	}
+		#cast #title{width: 305px;}
+		#foodmenu #title{width: 399px;}
+		#system #title{width: 276px;}
+		#shop #title{width: 158px;}
+		#contact #title{width: 339px;}
+
+	/* トップページ専用 */
+	#index #concept{
+		font-size: 140%;
+		line-height: 150%;
+		margin: 20px 0;
+	}
+	#index table{
+		margin-bottom: 15px;
+	}
+	#index table caption{
+		padding: 10px 0;
+	}
+	#index table th{
+		padding: 3px 10px;
+		margin: 1em;
+		border-radius: 10px;
+	}
+	#index table td{
+		padding: 0 10px;
+	}
+
+	/* 猫スタッフの紹介ページ専用 */
+	#cast table{
+		width: 100%;
+		margin: 0 auto 20px;
+	}
+	#cast table a{
+		width: 100%;
+		padding: 3px;
+		font-size: 120%;
+	}
+	#cast .grid{
+		grid-template: 80px 120px / 240px auto;
+		margin-bottom: 20px;
+	}
+	#cast .gridimage img{
+		width: 200px;
+		height: auto;
+	}
+	#cast .gridname{
+		font-size: 160%;
+		padding: 20px 0;
+	}
+	#cast .griddetail{
+		font-size: 100%;
+		line-height: 28px;
+		padding: 7px 0;
+	}
+	#cast .popup{
+		top: -250px;
+	}
+	#cast .popup img{
+		width: 200%;
+		height: auto;
+	}
+		#cast #cast3 .popup img{width: 150%;}
+
+	/* フードメニューページ専用 */
+	#foodmenu table{
+		width: 100%;
+		margin: 0 auto 20px;
+	}
+	#foodmenu table a{
+		width: 100%;
+		padding: 3px;
+		font-size: 120%;
+	}
+	#foodmenu article h2{
+		width: 100%;
+		margin-bottom: 20px;
+		padding: 5px 15px;
+		font-size: 140%;
+	}
+	#foodmenu .grid{
+		grid-template: 80px 120px / 240px auto 144px;
+		margin-bottom: 20px;
+	}
+	#foodmenu .gridimage img{
+		width: 200px;
+		height: auto;
+	}
+	#foodmenu .gridname{
+		font-size: 160%;
+		line-height: 30px;
+		padding: 20px 0;
+	}
+	#foodmenu .gridprice{
+		font-size: 160%;
+		padding: 20px 0;
+	}
+	#foodmenu .griddetail{
+		font-size: 100%;
+		line-height: 28px;
+		padding: 7px 0;
+	}
+
+	/* 利用ルール・料金ページ専用 */
+	#system article h2{
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
+	#system article h3{
+		width: 100%;
+		font-size: 18px;
+		line-height: 28px;
+		margin: 0 auto 40px;
+	}
+	#system table{
+		margin: 0 auto 30px;
+	}
+	#system table td{
+		font-size: 18px;
+		line-height: 30px;
+	}
+
+	/* 店舗案内ページ専用 */
+	#shop #map{
+		margin-bottom: 30px;
+	}
+	#shop #map iframe{
+		width: 320px;
+		height: 300px;
+	}
+	#shop #map p{
+		width: 300px;
+		font-size: 16px;
+		line-height: 20px;
+		margin: 10px;
+	}
+	#shop #info{
+		width: 44%;
+		padding-left: 10px;
+	}
+	#shop .index{
+		font-size: 20px;
+		line-height: 40px;
+	}
+	#shop .content{
+		font-size: 16px;
+		line-height: 26px;
+		padding-left:20px;
+		padding-bottom: 20px;
+	}
+
+	/* お問い合わせフォーム専用 */
+	#contact form #form{
+		width: 90%;
+	}
+	#contact form .wrap label{
+		width: 60%;
+		height: 60px;
+		padding-top: 35px;
+		font-size: 16px;
+	}
+	#contact form .wrap label span{
+		font-size: 13px;
+	}
+	#contact form .wrap p{
+		width: 100%;
+		height: 60px;
+		padding: 35px 30px 0;
+	}
+	#contact form .input1{
+		width: 100%;
+		height: 26px;
+		font-size: 16px;
+	}
+	#contact form .wrap .large1{
+		padding-top: 90px;
+		height: 140px;
+	}
+	#contact form .wrap .large2{
+		height: 190px;
+	}
+	#contact form .input2{
+		width: 100%;
+		height: 160px;
+		font-size: 16px;
+	}
+	#contact form .button{
+		width: 160px;
+		height: 40px;
+		margin: 30px auto;
+		font-size: 16px;
+	}
+}
+
+
+/* ◎◎◎ 1160px以下の場合 ◎◎◎ */
+@media screen and (max-width: 1160px){
+	/* body{background-color:#e8c6ff;} */
+
+	/* ヘッダー */
+	header h1 a{
+		width: 300px;
+		height: 39px;
+		margin-left: 10px;
+		margin-top: 20px;
+		margin-bottom: 5px;
+		background-size: contain;
+	}
+	header ul{
+		padding-top: 65px;
+	}
+	header ul a{
+		height: 27px;
+		background-size: contain;
+	}
+	header ul .gnav1{width: 55px;}
+	header ul .gnav2{width: 94px;}
+	header ul .gnav3{width: 71px;}
+	header ul .gnav4{width: 58px;}
+	header ul .gnav5{width: 82px;}
+
+	/* フッター */
+	footer ul{
+		padding:20px 10px 10px;
+	}
+	footer ul a{
+		height: 20px;
+		padding: 0 5px;
+		font-size: 15px;
+	}
+	footer h1 a{
+		width: 240px;
+		height: 21px;
+		background-size: contain;
+	}
+	footer #tel{
+		width: 140px;
+		min-width: 140px;
+		height: 21px;
+		margin:23px 5px 10px;
+		background-size: contain;
+	}
+	footer #copyright{
+		padding: 15px 10px 5px;
+		font-size: 14px;
+	}
+}
+
+
+/* ◎◎◎ 680px以下の場合 ◎◎◎ */
+@media screen and (max-width: 680px){
+	/* body{background-color:#d6e3ff;} */
+
+	/* ヘッダー */
+	#header{
+		display: block;
+	}
+	header h1 a{
+		margin-top: 10px;
+	}
+	header ul{
+		padding-top: 10px;
+		margin: 10px;
+	}
+	header ul a{
+		height: 23px;
+	}
+	header ul .gnav1{width: 48px;}
+	header ul .gnav2{width: 80px;}
+	header ul .gnav3{width: 61px;}
+	header ul .gnav4{width: 50px;}
+	header ul .gnav5{width: 70px;}
+
+	/* メインコンテンツ */
+	article{
+		font-size: 60%;
+	}
+	#title{
+		height: 40px;
+		margin: 5px auto 10px;
+	}
+		#cast #title{width: 203px;}
+		#foodmenu #title{width: 266px;}
+		#system #title{width: 184px;}
+		#shop #title{width: 105px;}
+		#contact #title{width: 226px;}
+
+	#topbutton a{
+		display: none;
+	}
+
+	/* フッター */
+	footer ul{
+		display: none;
+	}
+	footer #copyright{
+		font-size: 11px;
+	}
+
+	/* トップページ専用 */
+	#index #concept{
+		margin: 5px 0;
+	}
+	#index table th,td{
+		padding: 0 5px;
+	}
+
+	/* 猫スタッフの紹介ページ専用 */
+	#cast table{
+		margin: 0 auto 10px;
+	}
+	#cast table a{
+		padding: 1px;
+		font-size: 100%;
+	}
+	#cast .grid{
+		grid-template: 60px 90px / 180px auto;
+		margin-bottom: 10px;
+	}
+	#cast .gridimage img{
+		width: 150px;
+		height: auto;
+	}
+	#cast .gridname{
+		padding: 10px 0;
+	}
+	#cast .griddetail{
+		line-height: 22px;
+		padding: 3px 0;
+	}
+	#cast .mouseover:hover .popup{
+		display: none;
+	}
+
+	/* フードメニューページ専用 */
+	#foodmenu table{
+		margin: 0 auto 10px;
+	}
+	#foodmenu table a{
+		padding: 1px;
+		font-size: 100%;
+	}
+	#foodmenu article h2{
+		margin-bottom: 10px;
+		padding: 2px 10px;
+		font-size: 120%;
+	}
+	#foodmenu .grid{
+		grid-template: 60px 90px / 180px auto 108px;
+		margin-bottom: 10px;
+	}
+	#foodmenu .gridimage img{
+		width: 150px;
+		height: auto;
+	}
+	#foodmenu .gridname{
+		padding: 10px 0;
+		line-height: 24px;
+	}
+	#foodmenu .gridprice{
+		padding: 10px 0;
+	}
+	#foodmenu .griddetail{
+		line-height: 22px;
+		padding: 3px 0;
+	}
+
+	/* 利用ルール・料金ページ専用 */
+	#system article h2{
+		font-size: 18px;
+		margin-bottom: 10px;
+	}
+	#system article h3{
+		width: 100%;
+		font-size: 13px;
+		line-height: 20px;
+		margin: 0 auto 20px;
+	}
+	#system table{
+		margin: 0 auto 20px;
+	}
+	#system table td{
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	/* 店舗案内ページ専用 */
+	#shop #map{
+		margin-bottom: 10px;
+	}
+	#shop #map iframe{
+		width: 280px;
+		height: 260px;
+	}
+	#shop #map p{
+		width: 260px;
+		font-size: 14px;
+		line-height: 18px;
+		margin: 5px 10px;
+	}
+	#shop #info{
+		float: left;
+		width: 270px;
+		padding-left: 10px;
+	}
+	#shop .index{
+		font-size: 18px;
+		line-height: 30px;
+	}
+	#shop .content{
+		font-size: 14px;
+		line-height: 20px;
+		padding-left:20px;
+		padding-bottom: 10px;
+	}
+
+	/* お問い合わせフォーム専用 */
+	#contact form #form{
+		width: 95%;
+	}
+	#contact form .wrap label{
+		width: 50%;
+		height: 50px;
+		padding-top: 20px;
+		font-size: 14px;
+	}
+	#contact form .wrap label span{
+		font-size: 11px;
+	}
+	#contact form .wrap p{
+		height: 50px;
+		padding: 20px 20px 0;
+	}
+	#contact form .input1{
+		height: 22px;
+		font-size: 14px;
+	}
+	#contact form .wrap .large1{
+		padding-top: 70px;
+		height: 120px;
+	}
+	#contact form .wrap .large2{
+		height: 150px;
+	}
+	#contact form .input2{
+		height: 140px;
+		font-size: 14px;
+	}
+	#contact form .button{
+		width: 120px;
+		height: 30px;
+		margin: 15px auto;
+		font-size: 12px;
+	}
+}

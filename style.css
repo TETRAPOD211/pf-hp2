@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(1, 1, 2);
+
+  }
+
+ .container h1{
+  color: #fbff00;
+ }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    background-image: url(img/BGI.jpeg);
+    background-color: #000000;
+  }
+  
+  header {
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-left: 20px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 40px;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  section h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  section p {
+    line-height: 1.5;
+  }
+  
+  section ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  section ul li {
+    margin-right: 20px;
+    padding: 10px;
+    border: 1px solid #000;
+  }
+  
+  .work {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .work img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .work h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+  }
+  
+  .work p {
+    margin-left: 20px;
+  }
+  
+  .work a {
+    display: inline-block;
+    margin-left: 20px;
+    padding: 10px 20px;
+    background-color: #333,0.5;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+  }
+  
+  .form-group button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  footer {
+    background-color: #000;
+    color: #fff;
+    padding: 7px;
+    text-align: center;
+  }
+
+/* スキル用 */
+
+#skills li{
+  color: rgb(0, 0, 0);
+}
+
+#skills li:hover{
+  background-color: whitesmoke ;
+}
+
+/* 下線用 */
+
+  .menubar li {
+    position: relative;
+  }
+  
+  .menubar li:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: all 0.5s;
+  }
+  
+  .menubar li:hover:after {
+    width: 100%;
+  }
+
